@@ -53,7 +53,7 @@ Write terraform configuration file to create an EC2 server and install ansible o
 
 provider "aws" {
 
-region = "us-east-1"
+region = "us-east-2"
 
 shared_credentials_files =  ["~/.aws/credentials"]
 
@@ -161,7 +161,7 @@ egress {
 }
 
 resource "aws_instance" "myec2" {
-  ami           = "ami-005fc0f236362e99f"
+  ami           = "ami-00eb69d236edcfaf8"
   instance_type = "t2.medium"
   key_name = "web-key"
   subnet_id = aws_subnet.subnet-1.id
