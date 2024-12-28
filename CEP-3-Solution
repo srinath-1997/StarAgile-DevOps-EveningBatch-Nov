@@ -309,7 +309,7 @@ pipeline{
         stage('Clone Repo')
         {
             steps{
-                git 'https://github.com/Sonal0409/banking-finance-Project1.git'
+                git 'https://github.com/srinath-1997/star-agile-insurance-project.git'
             }
         }
         stage('Test Code')
@@ -328,7 +328,7 @@ pipeline{
         stage('Build Image')
         {
             steps{
-                sh 'docker build -t myproject3:$BUILD_NUMBER .'
+                sh 'docker build -t insurenceproject:$BUILD_NUMBER .'
             }
         }
         
@@ -338,10 +338,10 @@ pipeline{
                 
         withCredentials([string(credentialsId: 'DOCKER_HUB_PASWD', variable: 'DOCKER_HUB_PASWD')]) 
                 {
-               sh 'docker login -u sonal04 -p ${DOCKER_HUB_PASWD} '
+               sh 'docker login -u srinath7019 -p ${DOCKER_HUB_PASWD} '
                }
-                sh 'docker tag myproject3:$BUILD_NUMBER sonal04/myproject1:$BUILD_NUMBER '
-                sh 'docker push sonal04/myproject3:$BUILD_NUMBER'
+                sh 'docker tag insurenceproject:$BUILD_NUMBER srinath7019/insurenceproject:$BUILD_NUMBER '
+                sh 'docker push srinath7019/insurenceproject:$BUILD_NUMBER'
             }
         }
     }
